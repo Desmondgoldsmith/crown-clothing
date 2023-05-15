@@ -1,24 +1,14 @@
-import {Fragment} from 'react'
 import Home from "./Routes/home/home.component"
-import {createBrowserRouter,createRoutesFromElements,Outlet,RouterProvider, Route} from 'react-router-dom'
+import {createBrowserRouter,createRoutesFromElements,RouterProvider, Route} from 'react-router-dom'
+import Navigation from './Routes/Navigation/Navigation.component'
 
 
-const Navbar = () => {
-  return(
-    <div>
-      <div>
-        <h1>Navbar</h1>
-      </div>
-      <Outlet/>
-    </div>
-  )
-}
 
 
 const App = () => {
   const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path = "/" element = {<Navbar/>}>
+    <Route path = "/" element = {<Navigation/>}>
        <Route index element = {<Home/>}/>
        <Route path = '/about' element = {<h1>About Us new!</h1>}/>
     </Route>
