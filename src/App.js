@@ -18,16 +18,10 @@ const Navbar = () => {
 const App = () => {
   const router = createBrowserRouter(
   createRoutesFromElements(
-    <Fragment>
     <Route path = "/" element = {<Navbar/>}>
        <Route index element = {<Home/>}/>
        <Route path = '/about' element = {<h1>About Us new!</h1>}/>
     </Route>
-
-    {/* <Route path = "/about" element = {<Navbar/>}>
-       <Route index element = {<h1>About Us</h1>}/>
-    </Route> */}
-    </Fragment>
   )
 )
   return(<RouterProvider router = {router}/>)
