@@ -1,6 +1,7 @@
 import Home from "./Routes/home/home.component"
 import {createBrowserRouter,createRoutesFromElements,RouterProvider, Route} from 'react-router-dom'
 import Navigation from './Routes/Navigation/Navigation.component'
+import SignIn from "./Routes/Signin/Signin.routes"
 
 
 
@@ -12,7 +13,7 @@ const App = () => {
     <Route path = "/" element = {<Navigation/>}>
        <Route index element = {<Home/>}/>
        <Route path = '/shop' element = {<h1>Shop page!</h1>}/>
-       <Route path = '/sign-in' element = {<h1>Sign in!</h1>}/>
+       <Route path = '/sign-in' element = {<SignIn/>}/>
     </Route>
     </>
   )
