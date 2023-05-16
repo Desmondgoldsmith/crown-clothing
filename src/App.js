@@ -1,7 +1,7 @@
 import Home from "./Routes/home/home.component"
 import {createBrowserRouter,createRoutesFromElements,RouterProvider, Route} from 'react-router-dom'
 import Navigation from './Routes/Navigation/Navigation.component'
-import SignIn from "./Routes/Signin/Signin.routes"
+import SignIn from "./Routes/Signin/Signin.component"
 
 
 
