@@ -1,5 +1,7 @@
+import './button.styles.scss'
+
 const Button_Type_Classes = {
-    google: 'google_sign_in',
+    google: 'google-sign-in',
     inverted: 'inverted'
 }
 
