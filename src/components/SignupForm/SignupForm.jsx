@@ -36,7 +36,8 @@ const SignupForm = () => {
         );
   
         await createUserDocumentFromAuth(user, { displayName });
-        // resetFormFields();
+         alert('user detalis successfully saved !')
+        resetFormFields();
       } catch (error) {
         if (error.code === 'auth/email-already-in-use') {
           alert('Cannot create user, email already in use');
