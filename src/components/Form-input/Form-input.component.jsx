@@ -2,7 +2,7 @@ import { Fragment } from "react"
 
 
 
-const FormInput = () => {
+const FormInput = ({label,...otherProps}) => {
     return(
         <Fragment>
 
