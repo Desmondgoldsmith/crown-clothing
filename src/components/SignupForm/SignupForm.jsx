@@ -1,4 +1,4 @@
-import { Fragment , useState } from "react"
+import {useState } from "react"
 import {
     createAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
@@ -57,7 +57,10 @@ const SignupForm = () => {
     }
 
     return(
-        <Fragment>
+        <div className='sign-up-container'>
+        <h2>Don't have an account?</h2>
+        <span>Sign up with your email and password</span>
+
           <form onSubmit={handelSubmit}>
             <FormInput 
             label = "Display Name"
@@ -94,7 +97,7 @@ const SignupForm = () => {
 
             <Button type = "submit">Submit</Button>
           </form>
-        </Fragment>
+        </div>
     )
 }
 
