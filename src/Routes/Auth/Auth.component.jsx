@@ -1,5 +1,6 @@
 import SigninForm from '../../components/Sign-In-Form/Sign-in-Form.component.jsx';
 import SignupForm from '../../components/SignupForm/SignupForm.jsx';
+import './auth.styles.scss'
   
   const Auth = () => {
     return (
