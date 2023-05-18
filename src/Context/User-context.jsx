@@ -1,12 +1,12 @@
 import {createContext,useState} from 'react'
 
-export const userContext = createContext({
+export const UserContext = createContext({
  currentUser : null,
  setCurrentUser: () => null
 })
 
-export const userProvider = ({children}) => {
+export const UserProvider = ({children}) => {
     const [currentUser,setCurrentUser] = useState(null)
     const value = {currentUser,setCurrentUser}
-    return <userProvider.Provier value = {value}>{children}</userProvider.Provier>
+    return <UserContext.Provier value = {value}>{children}</UserContext.Provier>
 }
