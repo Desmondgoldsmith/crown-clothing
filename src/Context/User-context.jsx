@@ -8,5 +8,5 @@ export const userContext = createContext({
 export const userProvider = ({children}) => {
     const [currentUser,setCurrentUser] = useState(null)
     const value = {currentUser,setCurrentUser}
-    return <userProvider.Provier value = {value}>{childern}</userProvider.Provier>
+    return <userProvider.Provier value = {value}>{children}</userProvider.Provier>
 }
