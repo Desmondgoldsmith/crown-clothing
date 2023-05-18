@@ -4,6 +4,8 @@ import {
     signInAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
   } from '../../Utils/Firebase/firebase.utils.jsx';
+  import {
+    signInWithGooglePopup } from '../../Utils/Firebase/firebase.utils.jsx';
 import FormInput from "../Form-input/Form-input.component.jsx";
 import Button from "../Button/Button.component";
 import './sign-in-form.styles.scss'
@@ -47,7 +49,10 @@ const SigninForm = () => {
       }
     };
 
-
+    const logGoogleUser = async () => {
+      const { user } = await signInWithGooglePopup();
+      const userDocRef = await createUserDocumentFromAuth(user);
+    };
 
     const formInputChange = (event) => {
         const {name,value} = event.target
@@ -79,7 +84,7 @@ const SigninForm = () => {
             
           <div className = "buttons-container">
             <Button type = "submit">Submit</Button>
-            <Button buttonType="google" onClick = {() => {}}>Google SignIn</Button>
+            <Button type = "button" buttonType="google" onClick = {logGoogleUser}>Google SignIn</Button>
           </div>
           </form>
         </div>
