@@ -1,6 +1,7 @@
 import {useState } from "react"
 import {
     createAuthUserWithEmailAndPassword,
+    signInAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
   } from '../../Utils/Firebase/firebase.utils.jsx';
 import FormInput from "../Form-input/Form-input.component.jsx";
@@ -18,14 +19,31 @@ const SigninForm = () => {
    
     console.log(formInputs)
 
+    const resetFormFields = () => {
+      setFormInputs(defaultFormFeilds);
+    };
+
     const handelSubmit = async (event) => {
-    event.preventDefault()
-
-
-     try {
-        
+      event.preventDefault();
+  
+      try {
+        const { user } = await signInAuthUserWithEmailAndPassword(
+          email,
+          password
+        );
+        resetFormFields();
+        // setCurrentUser(user);
       } catch (error) {
-        
+        switch (error.code) {
+          case 'auth/wrong-password':
+            alert('incorrect password for email');
+            break;
+          case 'auth/user-not-found':
+            alert('no user associated with this email');
+            break;
+          default:
+            console.log(error);
+        }
       }
     };
 
@@ -61,7 +79,7 @@ const SigninForm = () => {
             
           <div className = "buttons-container">
             <Button type = "submit">Submit</Button>
-            <Button buttonType="google" onClick = {() => {}}>sign in with Google</Button>
+            <Button buttonType="google" onClick = {() => {}}>Google SignIn</Button>
           </div>
           </form>
         </div>
