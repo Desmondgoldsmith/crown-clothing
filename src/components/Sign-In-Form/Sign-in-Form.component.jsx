@@ -18,7 +18,8 @@ const defaultFormFeilds = {
 const SigninForm = () => {
     const [formInputs,setFormInputs] = useState(defaultFormFeilds)
     const {email,password} = formInputs
-   
+    const {setCurrentUser} = useContext(UserContext)
+
     console.log(formInputs)
 
     const resetFormFields = () => {
@@ -33,8 +34,8 @@ const SigninForm = () => {
           email,
           password
         );
+        setCurrentUser(user)
         resetFormFields();
-        // setCurrentUser(user);
       } catch (error) {
         switch (error.code) {
           case 'auth/wrong-password':
