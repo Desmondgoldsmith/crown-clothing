@@ -6,6 +6,11 @@ import {UserContext} from '../../Context/User-context'
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext)
+
+    const handleSignOut = async () =>{
+      
+    }
+
     return(
         <Fragment>
         <div className = "navigation">
@@ -15,7 +20,7 @@ const Navigation = () => {
             <div className = "nav-links-container">
             <Link to = "/shop" className = "nav-link">SHOP</Link>
             {currentUser ? (
-            <span className = "nav-link">SIGN OUT</span>
+            <span onClick = {handleSignOut} className = "nav-link">SIGN OUT</span>
             )
             :
             (<Link to = "/auth" className = "nav-link">SIGN IN</Link>)
