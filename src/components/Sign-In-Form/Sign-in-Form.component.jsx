@@ -22,9 +22,9 @@ const SigninForm = () => {
 
     console.log(formInputs)
 
-    const resetFormFields = () => {
-      setFormInputs(defaultFormFeilds);
-    };
+    // const resetFormFields = () => {
+    //   setFormInputs(defaultFormFeilds);
+    // };
 
     const handelSubmit = async (event) => {
       event.preventDefault();
@@ -35,7 +35,6 @@ const SigninForm = () => {
           password
         );
         setCurrentUser(user)
-        resetFormFields();
       } catch (error) {
         switch (error.code) {
           case 'auth/wrong-password':
@@ -52,7 +51,7 @@ const SigninForm = () => {
 
     const logGoogleUser = async () => {
       const { user } = await signInWithGooglePopup();
-      const userDocRef = await createUserDocumentFromAuth(user);
+      // const userDocRef = await createUserDocumentFromAuth(user);
     };
 
     const formInputChange = (event) => {
