@@ -3,12 +3,13 @@ import {Outlet,Link} from 'react-router-dom'
 import {ReactComponent as CrownLogo} from '../../Asset/crown.svg'
 import './Navigation.styles.scss'
 import {UserContext} from '../../Context/User-context'
+import {signOutUser} from '../../Utils/Firebase/firebase.utils'
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext)
 
     const handleSignOut = async () =>{
-      
+      await signOutUser()
     }
 
     return(
