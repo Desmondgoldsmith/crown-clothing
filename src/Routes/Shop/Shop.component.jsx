@@ -6,7 +6,7 @@ import Card from '../../components/Card/card.component'
 const Shop = () => {
   const {products} = useContext(ProductContext)
   return(
-        <div>
+        <div className = "product-card">
             {products.map((product) => {
                 return(
                     <Card key = {product.id} product = {product} />
