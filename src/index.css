@@ -4,6 +4,7 @@ body {
   font-family: 'Rajdhani', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 20px 40px;
 }
 
 a{
