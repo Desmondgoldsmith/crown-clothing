@@ -3,7 +3,7 @@ import {createBrowserRouter,createRoutesFromElements,RouterProvider, Route} from
 import Navigation from './Routes/Navigation/Navigation.component'
 import Auth from "./Routes/Auth/Auth.component"
 import Shop from "./Routes/Shop/Shop.component"
-import Checkout from "./components/Checkout/Checkout.components"
+import Checkout from "./Routes/Checkout/Checkout.components"
 
 
 
