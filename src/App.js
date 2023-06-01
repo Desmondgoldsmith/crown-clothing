@@ -3,6 +3,7 @@ import {createBrowserRouter,createRoutesFromElements,RouterProvider, Route} from
 import Navigation from './Routes/Navigation/Navigation.component'
 import Auth from "./Routes/Auth/Auth.component"
 import Shop from "./Routes/Shop/Shop.component"
+import Checkout from "./components/Checkout/Checkout.components"
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
        <Route index element = {<Home/>}/>
        <Route path = '/shop' element = {<Shop/>}/>
        <Route path = '/auth' element = {<Auth/>}/>
+       <Route path = '/checkout' element = {<Checkout/>}/>
     </Route>
     </>
   )
