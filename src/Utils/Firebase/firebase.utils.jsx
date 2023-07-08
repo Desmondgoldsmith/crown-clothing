@@ -8,7 +8,7 @@ import {
   signOut,
   onAuthStateChanged
 } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc, collection } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, collection , writeBatch} from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDGaxXPn_P03h7E7sU95TA_H_B4Qx5gU18",
@@ -37,6 +37,16 @@ export const db = getFirestore();
 
 export const AddItemsToDocument = async(collectionKey, objectsToAdd) => {
   const collectionRef = collection(db,collectionKey);
+  const batch = writeBatch();
+
+  objectsToAdd.foreach((object) => {
+    const docRef = doc(collectionRef,object.title.toLowerCase())
+    batch.set(docRef,object)
+
+  });
+
+  await batch.commit();
+  console.log("done");
 }
 
 export const createUserDocumentFromAuth = async (
