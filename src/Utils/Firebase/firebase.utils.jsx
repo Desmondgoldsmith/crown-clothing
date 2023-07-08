@@ -8,7 +8,7 @@ import {
   signOut,
   onAuthStateChanged
 } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, collection } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDGaxXPn_P03h7E7sU95TA_H_B4Qx5gU18",
@@ -34,6 +34,10 @@ export const signInWithGooglePopup = () =>
 //   signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
+
+export const AddItemsToDocument = async(collectionKey, objectsToAdd) => {
+  const collectionRef = collection(db,collectionKey);
+}
 
 export const createUserDocumentFromAuth = async (
   userAuth,
